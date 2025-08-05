@@ -1,0 +1,18 @@
+{
+    "baseUrl": "https://www.way2automation.com/demo.html#",
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
+    "video": false,
+    "screenshotOnRunFailure": true,
+    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 10000,
+    "requestTimeout": 10000,
+    "responseTimeout": 10000,
+    "pageLoadTimeout": 30000,
+    "testFiles": "specs/**/*.spec.ts",
+    "integrationFolder": "cypress/system",
+    "fixturesFolder": "cypress/fixtures",
+    "supportFile": "cypress/support/index.js",
+    "pluginsFile": "cypress/plugins/index.js",
+    "watchForFileChanges": false
+  }
