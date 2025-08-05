@@ -6,4 +6,8 @@ export default class BasePage {
         cy.visit(url)
     }
 
+    waitForPageLoad() {
+        cy.waitForPageLoad()
+        return this
+    }
 }

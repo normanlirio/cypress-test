@@ -3,24 +3,25 @@ import { UserInformation } from "../utils/types";
 
 class Registration {
 
-    private readonly formContainer: string;
-    private readonly name: string;
-    private readonly phone: string;
-    private readonly email: string;
-    private readonly country: string;
-    private readonly city: string;
-    private readonly username: string;
-    private readonly password: string;
+    private readonly formContainer: string
+    private readonly name: string
+    private readonly phone: string
+    private readonly email: string
+    private readonly country: string
+    private readonly city: string
+    private readonly username: string
+    private readonly password: string
+    private readonly lifetimeMembershipLink: string;
 
     constructor() {
         this.formContainer = 'div#load_box #load_form'
-        this.name = 'fieldset input[name="name"]';
-        this.phone = 'fieldset input[name="phone"]';
-        this.email = 'fieldset input[name="email"]';
-        this.country = 'fieldset select[name="country"]';
-        this.city = 'fieldset input[name="city"]';
-        this.username = 'fieldset input[name="username"]';
-        this.password = 'fieldset input[name="password"]';
+        this.name = 'fieldset input[name="name"]'
+        this.phone = 'fieldset input[name="phone"]'
+        this.email = 'fieldset input[name="email"]'
+        this.country = 'fieldset select[name="country"]'
+        this.city = 'fieldset input[name="city"]'
+        this.username = 'fieldset input[name="username"]'
+        this.password = 'fieldset input[name="password"]'
     }
 
     isRegistrationFormVisible() {
@@ -37,29 +38,29 @@ class Registration {
     fillRegistrationForm(information: UserInformation) {
         cy.get(this.name)
             .should('be.visible')
-            .type(information.name);
+            .type(information.name)
 
         cy.get(this.phone)
             .should('be.visible')
-            .type(information.phone);
+            .type(information.phone)
 
         cy.get(this.email)
             .should('be.visible')
-            .type(information.email);
+            .type(information.email)
 
         cy.get(this.city)
             .should('be.visible')
-            .type(information.city);
+            .type(information.city)
 
         cy.get(this.formContainer)
             .find(this.username)
             .should('be.visible')
-            .type(information.username);
+            .type(information.username)
 
         cy.get(this.formContainer)
             .find(this.password)
             .should('be.visible')
-            .type(information.password);
+            .type(information.password)
         
         return this
     }
@@ -75,6 +76,11 @@ class Registration {
         cy.get(this.formContainer)
             .find('input[type="submit"]')
             .click()
+        return this
+    }
+
+    clickModalLink(link: string) {
+        cy.clickLink(link)
         return this
     }
 }
