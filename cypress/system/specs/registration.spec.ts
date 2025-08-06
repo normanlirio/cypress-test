@@ -5,9 +5,6 @@ import { UserInformation } from "../utils/types"
 
 
 describe('Registration', () => {
-  before(() => {
-    cy.visit('/')
-  })
 
   it('should retrieve the target url from Submit Button Clicked Event', () => {
     cy.fixture(FIXTURE_ACTIONS_FILE)

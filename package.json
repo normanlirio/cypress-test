@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "npx cypress open",
     "headless": "npx cypress run --browser chrome"
   },
   "keywords": [],
