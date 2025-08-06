@@ -13,3 +13,8 @@ export enum ModalLinks  {
     membership = 'EXPLORE LIFETIME MEMBERSHIP',
     website= 'ENTER TO THE TESTING WEBSITE'
 }
+
+export enum PaymentOptions {
+    usd = 'PAY IN USD',
+    indian = 'PAY IN INDIAN CURRENCY'
+}
