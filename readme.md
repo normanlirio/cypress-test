@@ -12,8 +12,7 @@ This project uses [Cypress](https://docs.cypress.io/) v9 for end-to-end testing.
 
 1. Clone the repository:
 
-```bash
-```git clone https://github.com/normanlirio/cypress-test.git```p;5567
+`git clone https://github.com/normanlirio/cypress-test.git`
 cd your-repo-name
 
 Install dependencies:
@@ -30,11 +29,11 @@ Select a spec file to start the test run.
 
 Run in Headless Mode
 
-npm run headless:test
+`npm run headless:test`
 
 Run in Headed Mode
 
-npm run headed:test
+`npm run headed:test`
 
 
 Test Run recording
