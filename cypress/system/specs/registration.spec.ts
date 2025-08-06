@@ -4,7 +4,6 @@ import { FIXTURE_ACTIONS_FILE, FIXTURE_USERS_FILE, REGISTRATION_URL } from "../u
 import { UserInformation } from "../utils/types"
 
 
-
 describe('Registration', () => {
   before(() => {
     cy.visit('/')

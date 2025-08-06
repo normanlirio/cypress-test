@@ -11,7 +11,6 @@ class Registration {
     private readonly city: string
     private readonly username: string
     private readonly password: string
-    private readonly lifetimeMembershipLink: string;
 
     constructor() {
         this.formContainer = 'div#load_box #load_form'

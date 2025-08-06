@@ -5,12 +5,14 @@ class Course extends BasePage {
     private readonly moreLectureBtn: string
     private readonly sectionItem: string
     private readonly payOptionsRadioGroup: string
+    private readonly enrolButton: string
 
     constructor() {
         super()
         this.moreLectureBtn = '#more_lecture_sections'
         this.sectionItem = '.section-item'
         this.payOptionsRadioGroup = 'div[data-toggle="buttons"]'
+        this.enrolButton = '#enroll-button'
     }
 
     clickMoreLectureButton() {
@@ -48,6 +50,21 @@ class Course extends BasePage {
             .invoke('text')
             .as('price')
         return cy.get('@price')
+    }
+
+    clickEnrollButton() {
+        cy.get(this.enrolButton)
+            .should('be.visible')
+            .click()
+        return this
+    }
+
+    retrieveEnrollBtnText() {
+        cy.get(this.enrolButton)
+            .should('be.visible')
+            .invoke('text')
+            .as('enrollBtnText')
+        return cy.get('@enrollBtnText')
     }
 }
 

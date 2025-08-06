@@ -1,6 +1,5 @@
 
 
-
 export default class BasePage {
 
     open(url: string) {
