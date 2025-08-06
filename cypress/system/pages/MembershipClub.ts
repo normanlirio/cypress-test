@@ -47,8 +47,6 @@ class MembershipClub extends BasePage {
         return this;
     }
     
-    
-
     isCourseVisible(course: string) {
         cy.get('h4')
             .contains(course)
