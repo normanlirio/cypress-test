@@ -23,13 +23,7 @@ class Home extends BasePage {
     }
 
     visitTargetUrl(menuItem: string) {
-        cy.get(this.linkBox)
-             .contains(menuItem)
-             .parent()
-             .find('a')
-             .should('be.visible')
-             .invoke('removeAttr', 'target')
-             .click()
+        cy.registration(this.linkBox, menuItem)
         return this
      }
 

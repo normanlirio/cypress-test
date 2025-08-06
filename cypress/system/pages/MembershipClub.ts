@@ -21,19 +21,33 @@ class MembershipClub extends BasePage {
         return this
     }
 
-    clickNextSlide() {
-        for (let i = 0; i < 3; i++) {
-            cy.get(this.nextSlide).click()
-            cy.wait(500)
+    //TODO: add dynamic limit
+    selectCourse(course: string, attempt = 0) {
+        if (attempt >= 10) {
+            throw new Error(`Course "${course}" not found after 10 attempts`);
         }
-
+    
         cy.get(this.slide)
-            .wait(500)
-            .find('.pp-info-box-button')
-            .click()
-
-        return this
+            .invoke('text')
+            .then((text) => {
+                if (text.includes(course)) {
+                    cy.log("PASOOK MEEEN");
+                    cy.get(this.slide)
+                        .find('.pp-info-box-button')
+                        .click();
+                } else {
+                    //Carousel doesn't load quick enough
+                    cy.get(this.nextSlide, { timeout: 60000 })
+                        .click()
+                        .wait(500);
+                    this.selectCourse(course, attempt + 1); // recursive call
+                }
+            });
+    
+        return this;
     }
+    
+    
 
     isCourseVisible(course: string) {
         cy.get('h4')

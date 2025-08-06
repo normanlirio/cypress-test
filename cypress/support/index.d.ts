@@ -6,6 +6,7 @@ declare global {
     interface Chainable {
       clickLink(link: string): Chainable<void>
       waitForPageLoad(): Chainable<void>
+      registration(selector, menuItem: string): Chainable<void>
     }
   }
 }
